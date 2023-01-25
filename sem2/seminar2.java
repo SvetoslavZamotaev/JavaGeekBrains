@@ -11,11 +11,14 @@ public class seminar2 {
 
         while ((line = buf.readLine()) != null) {
             nextLine = buf.readLine();
-            if (line.charAt(0) == 'a') {
+            if (line.charAt(2) == '0' && nextLine.charAt(2) == '0') {
+                resFile.write("a = 0 ,b = 0 (undefined) \n");
+            } else if (line.charAt(0) == 'a') {
                 resFile.write(degreeOfNum(editString(line), editString(nextLine)) + "\n");
-            } else {
+            } else if (line.charAt(0) == 'b') {
                 resFile.write(degreeOfNum(editString(nextLine), editString(line)) + "\n");
             }
+
         }
         buf.close();
         resFile.close();
